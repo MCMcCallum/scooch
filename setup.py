@@ -71,7 +71,7 @@ the [documentation](http://www.mattcmccallum.com/scooch/docs).
 
 
 REQUIRED_PACKAGES = [
-    'pyyaml==6.0.1',
+    'pyyaml>=6.0.1',
     'sphinx',
     'sphinx_rtd_theme==0.5.1',
     'ruamel.yaml==0.16.12',
@@ -105,7 +105,7 @@ setuptools.setup(
         'make_reqs': MakeReqsCommand
     },
     name='scooch',
-    version='1.1.0',
+    version='1.1.1',
     description='A python module for configuring hierarchical class structures in yaml with defaults',
     long_description=long_description,
     long_description_content_type="text/markdown",

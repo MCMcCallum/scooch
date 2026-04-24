@@ -53,7 +53,7 @@ class ConfigurableFactory( object ):
             output_obj = {name: self.construct(cfg_type.subtype, cfg) for name, cfg in cfg.items()}
         elif isinstance(cfg_type, ConfigList):
             output_obj = [self.construct(cfg_type.subtype, each_cfg) for each_cfg in cfg]
-        elif type(cfg_type) is ConfigurableMeta:
+        elif issubclass(type(cfg_type), ConfigurableMeta):
             # TODO [matt.c.mccallum 01.13.21]: Move the below method to a member function once we have updated all other codebases to use the ConfigurableFactory instead.
             output_obj = self._class_instance_for_config(cfg_type, Config(cfg))
         else:
